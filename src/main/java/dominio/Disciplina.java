@@ -7,7 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -23,22 +23,28 @@ public class Disciplina {
 	private int id;
 	
 	/**
-	 * Lista que guarda os alunos da disciplina
+	 * Atributo que guarda o codigo da disciplina
 	 */
-	@ManyToMany(mappedBy="disciplinasAluno")
-    private List<Aluno> alunos;
+	@Column
+	private String codigo;
 	
 	/**
-	 * Lista que guarda os monitores da disciplina
+	 * Atributo que guarda o nome da disciplina
 	 */
-	@ManyToMany(mappedBy="disciplinasMonitor")
-    private List<Monitor> monitores;
+	@Column
+	private String nome;
 	
 	/**
-	 * Lista que guarda os professores da disciplina
+	 * Atributo que guarda o curso da disciplina
 	 */
-	@ManyToMany(mappedBy="disciplinasProfessor")
-    private List<Professor> professores;
+	@Column
+	private String curso;
+	
+	/**
+	 * Atibuto que guarda a lista de perguntas da disciplina
+	 */
+	@OneToMany(mappedBy="disciplina")
+	private List<Pergunta> perguntas;
 
 	public Disciplina(){
 		
@@ -59,46 +65,45 @@ public class Disciplina {
 	}
 
 	/**
-	 * @return the alunos
+	 * @return the codigo
 	 */
-	public List<Aluno> getAlunos() {
-		return alunos;
+	public String getCodigo() {
+		return codigo;
 	}
 
 	/**
-	 * @param alunos the alunos to set
+	 * @param codigo the codigo to set
 	 */
-	public void setAlunos(List<Aluno> alunos) {
-		this.alunos = alunos;
+	public void setCodigo(String codigo) {
+		this.codigo = codigo;
 	}
 
 	/**
-	 * @return the monitores
+	 * @return the nome
 	 */
-	public List<Monitor> getMonitores() {
-		return monitores;
+	public String getNome() {
+		return nome;
 	}
 
 	/**
-	 * @param monitores the monitores to set
+	 * @param nome the nome to set
 	 */
-	public void setMonitores(List<Monitor> monitores) {
-		this.monitores = monitores;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
 	/**
-	 * @return the professores
+	 * @return the curso
 	 */
-	public List<Professor> getProfessores() {
-		return professores;
+	public String getCurso() {
+		return curso;
 	}
 
 	/**
-	 * @param professores the professores to set
+	 * @param curso the curso to set
 	 */
-	public void setProfessores(List<Professor> professores) {
-		this.professores = professores;
+	public void setCurso(String curso) {
+		this.curso = curso;
 	}
-	
 	
 }
