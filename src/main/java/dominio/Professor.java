@@ -14,70 +14,51 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 /**
- * Classe de dominio Aluno
- * 
+ * Classe dominio Professor
  * @author Fernanda Chacon
  *
  */
 
 @Entity
-@Table(name="aluno")
-public class Aluno {
+@Table(name="professor")
+public class Professor {
 	
 	/**
-	 * Atributo identificador da classe Aluno 
+	 * Atributo identificador da classe Professor
 	 */
 	@Id
-	@Column(name="id_aluno", nullable=false)
+	@Column(name="id_monitor", nullable=false)
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
 	
+
 	/**
-	 * Atributo que guarda a matricula do Aluno
-	 */
-	
-	@Column
-	private String matricula;
-	
-	/**
-	 * Atributo que guarda o curso do Aluno
-	 */
-	@Column
-	private String curso;
-	
-	
-	/**
-	 * Atributo que guarda a Pessoa do Aluno
+	 * Atributo que guarda a Pessoa do Professor
 	 */
 	@OneToOne
 	@JoinColumn(name="pessoa_id")
 	private Pessoa pessoa;
 	
 	/**
-	 * Atributo que guarda a Usuario do aluno
+	 * Atributo que guarda a Usuario do Professor
 	 */
 	@OneToOne
 	@JoinColumn(name="usuario_id")
 	private Usuario usuario;
 	
 	/**
-	 * Listagem que guarda as disciplinas do Aluno
+	 * Lista que guarda as disciplinas que o Professor leciona
 	 */
 	@ManyToMany
-    @JoinTable(name="aluno_disciplina", joinColumns={@JoinColumn(name="aluno_id")}, 
+    @JoinTable(name="professor_disciplina", joinColumns={@JoinColumn(name="professor_id")}, 
     inverseJoinColumns={@JoinColumn(name="disciplina_id")})
-    private List<Disciplina> disciplinasAluno;
- 
-
-	/**
-	 * Construtor padr�o da classe
-	 */
-	public Aluno(){
+    private List<Disciplina> disciplinasProfessor;
+	
+	
+	public Professor(){
 		
 	}
-	
-	// Getters and setters
-	
+
 	/**
 	 * @return the id
 	 */
@@ -90,34 +71,6 @@ public class Aluno {
 	 */
 	public void setId(int id) {
 		this.id = id;
-	}
-
-	/**
-	 * @return the matricula
-	 */
-	public String getMatricula() {
-		return matricula;
-	}
-
-	/**
-	 * @param matricula the matricula to set
-	 */
-	public void setMatricula(String matricula) {
-		this.matricula = matricula;
-	}
-
-	/**
-	 * @return the curso
-	 */
-	public String getCurso() {
-		return curso;
-	}
-
-	/**
-	 * @param curso the curso to set
-	 */
-	public void setCurso(String curso) {
-		this.curso = curso;
 	}
 
 	/**
@@ -161,5 +114,5 @@ public class Aluno {
 	public void setDisciplinas(List<Disciplina> disciplinas) {
 		this.disciplinas = disciplinas;
 	}
-
+	
 }

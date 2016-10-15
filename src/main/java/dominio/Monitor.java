@@ -14,70 +14,61 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 /**
- * Classe de dominio Aluno
- * 
+ * Classe dominio Monitor
  * @author Fernanda Chacon
  *
  */
 
 @Entity
-@Table(name="aluno")
-public class Aluno {
+@Table(name="monitor")
+public class Monitor {
 	
 	/**
-	 * Atributo identificador da classe Aluno 
+	 * Atributo identificador da classe Monitor
 	 */
 	@Id
-	@Column(name="id_aluno", nullable=false)
+	@Column(name="id_monitor", nullable=false)
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
 	
 	/**
-	 * Atributo que guarda a matricula do Aluno
+	 * Atributo que guarda a matricula do Monitor
 	 */
-	
 	@Column
 	private String matricula;
 	
 	/**
-	 * Atributo que guarda o curso do Aluno
+	 * Atributo que guarda o curso do Monitor
 	 */
 	@Column
 	private String curso;
 	
-	
 	/**
-	 * Atributo que guarda a Pessoa do Aluno
+	 * Atributo que guarda a Pessoa do Monitor
 	 */
 	@OneToOne
 	@JoinColumn(name="pessoa_id")
 	private Pessoa pessoa;
 	
 	/**
-	 * Atributo que guarda a Usuario do aluno
+	 * Atributo que guarda a Usuario do Monitor
 	 */
 	@OneToOne
 	@JoinColumn(name="usuario_id")
 	private Usuario usuario;
 	
 	/**
-	 * Listagem que guarda as disciplinas do Aluno
+	 * Lista que guarda as disciplinas que é Monitor
 	 */
 	@ManyToMany
-    @JoinTable(name="aluno_disciplina", joinColumns={@JoinColumn(name="aluno_id")}, 
+    @JoinTable(name="monitor_disciplina", joinColumns={@JoinColumn(name="monitor_id")}, 
     inverseJoinColumns={@JoinColumn(name="disciplina_id")})
-    private List<Disciplina> disciplinasAluno;
- 
-
-	/**
-	 * Construtor padrï¿½o da classe
-	 */
-	public Aluno(){
+    private List<Disciplina> disciplinasMonitor;
+	
+	public Monitor(){
 		
 	}
-	
-	// Getters and setters
-	
+
 	/**
 	 * @return the id
 	 */
@@ -160,6 +151,6 @@ public class Aluno {
 	 */
 	public void setDisciplinas(List<Disciplina> disciplinas) {
 		this.disciplinas = disciplinas;
-	}
+	}	
 
 }

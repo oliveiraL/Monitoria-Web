@@ -9,7 +9,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 /**
- * Classe de dom�nio Pessoa
+ * Classe de dominio Pessoa
  * 
  * @author Fernanda Chacon
  *
