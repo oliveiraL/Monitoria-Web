@@ -58,7 +58,7 @@ public class Monitor {
 	private Usuario usuario;
 	
 	/**
-	 * Lista que guarda as disciplinas que é Monitor
+	 * Lista que guarda as disciplinas que ï¿½ Monitor
 	 */
 	@ManyToMany
     @JoinTable(name="monitor_disciplina", joinColumns={@JoinColumn(name="monitor_id")}, 
@@ -139,18 +139,13 @@ public class Monitor {
 		this.usuario = usuario;
 	}
 
-	/**
-	 * @return the disciplinas
-	 */
-	public List<Disciplina> getDisciplinas() {
-		return disciplinas;
+	public List<Disciplina> getDisciplinasMonitor() {
+		return disciplinasMonitor;
 	}
 
-	/**
-	 * @param disciplinas the disciplinas to set
-	 */
-	public void setDisciplinas(List<Disciplina> disciplinas) {
-		this.disciplinas = disciplinas;
-	}	
+	public void setDisciplinasMonitor(List<Disciplina> disciplinasMonitor) {
+		this.disciplinasMonitor = disciplinasMonitor;
+	}
+
 
 }

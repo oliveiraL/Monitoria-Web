@@ -11,8 +11,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="disciplina")
-public class Disciplina {
+@Table(name="disciplinas")
+public class Disciplina implements dominio.Entity {
 	
 	/**
 	 * Atributo identificador da classe Disciplina
@@ -40,11 +40,6 @@ public class Disciplina {
 	@Column
 	private String curso;
 	
-	/**
-	 * Atibuto que guarda a lista de perguntas da disciplina
-	 */
-	@OneToMany(mappedBy="disciplina")
-	private List<Pergunta> perguntas;
 
 	public Disciplina(){
 		

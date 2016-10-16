@@ -5,7 +5,7 @@
   <artifactId>monitoria-web</artifactId>
   <packaging>war</packaging>
   <version>0.0.1-SNAPSHOT</version>
-  <name>monitoria-web Maven Webapp</name>
+  <name>monitoria-web</name>
   <url>http://maven.apache.org</url>
   <dependencies>
     <dependency>

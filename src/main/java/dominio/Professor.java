@@ -101,18 +101,13 @@ public class Professor {
 		this.usuario = usuario;
 	}
 
-	/**
-	 * @return the disciplinas
-	 */
-	public List<Disciplina> getDisciplinas() {
-		return disciplinas;
+	public List<Disciplina> getDisciplinasProfessor() {
+		return disciplinasProfessor;
 	}
 
-	/**
-	 * @param disciplinas the disciplinas to set
-	 */
-	public void setDisciplinas(List<Disciplina> disciplinas) {
-		this.disciplinas = disciplinas;
+	public void setDisciplinasProfessor(List<Disciplina> disciplinasProfessor) {
+		this.disciplinasProfessor = disciplinasProfessor;
 	}
+
 	
 }
