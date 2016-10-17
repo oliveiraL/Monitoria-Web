@@ -8,7 +8,12 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 import dominio.Entity;
-
+/**
+ * 
+ * @author Lucio Soares de OLiveira
+ *	classe generica para persistencia de dados
+ * @param <T>
+ */
 @Stateless
 public class DAO <T>{
 	@PersistenceContext

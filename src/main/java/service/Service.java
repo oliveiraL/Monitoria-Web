@@ -7,6 +7,12 @@ import javax.inject.Inject;
 import dao.DAO;
 import dominio.Entity;
 
+/**
+ * 
+ * @author luciosoares
+ *	Classe generica para regras de negocios
+ * @param <T>
+ */
 public class Service <T> {
 	@Inject private DAO<T> dao;
 	

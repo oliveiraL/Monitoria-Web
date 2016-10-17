@@ -1,12 +1,18 @@
 package controller;
 
 import javax.faces.bean.ManagedBean;
+
 import javax.faces.bean.SessionScoped;
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
 
 import service.Service;
-
+/**
+ * 
+ * @author Lucio Soares de Oliveira
+ *	Classe generica para controller
+ * @param <T>
+ */
 @ManagedBean
 @SessionScoped
 public class MBean <T>{
