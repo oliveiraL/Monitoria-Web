@@ -1,5 +1,6 @@
 package controller;
 
+import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 
 import javax.faces.bean.SessionScoped;
@@ -20,6 +21,7 @@ public class MBean <T>{
 	
 	private DataModel<T> listagem;
 	
+	@EJB
 	private Service<T> service;
 	
 	public MBean() {

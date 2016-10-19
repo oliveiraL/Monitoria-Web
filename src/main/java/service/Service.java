@@ -2,6 +2,7 @@ package service;
 
 import java.util.List;
 
+import javax.ejb.Stateful;
 import javax.inject.Inject;
 
 import dao.DAO;
@@ -13,6 +14,7 @@ import dominio.Entity;
  *	Classe generica para regras de negocios
  * @param <T>
  */
+@Stateful
 public class Service <T> {
 	@Inject private DAO<T> dao;
 	
